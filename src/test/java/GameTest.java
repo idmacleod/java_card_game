@@ -32,4 +32,12 @@ public class GameTest {
     public void canCountPlayers() {
         assertEquals(3, game.countPlayers());
     }
+
+    @Test
+    public void canDealCards() {
+        game.dealCards(3);
+        assertEquals(3, player1.countHand());
+        assertEquals(3, player2.countHand());
+        assertEquals(3, player3.countHand());
+    }
 }

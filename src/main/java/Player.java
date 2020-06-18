@@ -20,4 +20,18 @@ public class Player {
     public int countHand() {
         return hand.size();
     }
+
+    public void takeCard(Card card) {
+        hand.add(card);
+    }
+
+    public Card getHighestCard() {
+        Card highest = hand.get(0);
+        for (Card card : hand) {
+            if (card.getCardValue() > highest.getCardValue()) {
+                highest = card;
+            }
+        }
+        return highest;
+    }
 }

@@ -23,7 +23,15 @@ public class Game {
         return players.size();
     }
 
-    public void dealCards() {
-
+    public void dealCards(int numberOfCards) {
+        for (Player player : players) {
+            for (int i = 0; i < numberOfCards; i++) {
+                player.takeCard(this.deck.dealCard());
+            }
+        }
     }
+
+//    public Player checkWinner(){
+//
+//    }
 }
