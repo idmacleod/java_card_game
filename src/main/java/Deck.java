@@ -29,7 +29,7 @@ public class Deck {
         Collections.shuffle(cards);
     }
 
-    public Card getCard(){
+    public Card dealCard(){
         return cards.remove(0);
     }
 }

@@ -37,4 +37,13 @@ public class DeckTest {
         ArrayList<Card> shuffledPack = deck2.getCards();
         assertNotSame(freshPack, shuffledPack);
     }
+
+    @Test
+    public void canDealCard() {
+        deck1.populate();
+        Card cardDealt = deck1.dealCard();
+        assertEquals(51, deck1.countCards());
+        assertEquals(SuitType.HEARTS, cardDealt.getSuit());
+        assertEquals(RankType.ACE, cardDealt.getRank());
+    }
 }
