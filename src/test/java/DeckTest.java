@@ -3,26 +3,38 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class DeckTest {
-    private Deck deck;
+    private Deck deck1;
+    private Deck deck2;
     private ArrayList<Card> cards;
 
 
     @Before
     public void before() {
-        deck = new Deck();
+        deck1 = new Deck();
+        deck2 = new Deck();
     }
 
     @Test
     public void deckIsEmptyToStart() {
-        assertEquals(0, deck.countCards());
+        assertEquals(0, deck1.countCards());
     }
 
     @Test
     public void canPopulate() {
-        deck.populate();
-        assertEquals(52, deck.countCards());
+        deck1.populate();
+        assertEquals(52, deck1.countCards());
+    }
+
+    @Test
+    public void canShuffle() {
+        deck1.populate();
+        deck2.populate();
+        deck2.shuffleCards();
+        ArrayList<Card> freshPack = deck1.getCards();
+        ArrayList<Card> shuffledPack = deck2.getCards();
+        assertNotSame(freshPack, shuffledPack);
     }
 }
