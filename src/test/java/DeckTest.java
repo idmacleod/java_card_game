@@ -18,7 +18,7 @@ public class DeckTest {
     }
 
     @Test
-    public void deckIsEmptyToStart() {
+    public void deckStartsEmpty() {
         assertEquals(0, deck1.countCards());
     }
 
