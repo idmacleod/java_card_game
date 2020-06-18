@@ -19,4 +19,10 @@ public class DeckTest {
     public void deckIsEmptyToStart() {
         assertEquals(0, deck.countCards());
     }
+
+    @Test
+    public void canPopulate() {
+        deck.populate();
+        assertEquals(52, deck.countCards());
+    }
 }
